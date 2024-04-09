@@ -10,9 +10,8 @@ public class Movement : MonoBehaviour
 
     Vector3 velocity;
     Vector3 direction;
-    [SerializeField] float speed;
-    [SerializeField] float bearing = 0;
-
+    float bearing = 0;
+    float speed = 0f;
 
     void Start()
     {
@@ -23,6 +22,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed += Input.GetAxis("Vertical")/100;
+        bearing -= Input.GetAxis("Horizontal");
         direction = new Vector3(Mathf.Cos(bearing * Mathf.Deg2Rad), Mathf.Sin(bearing * Mathf.Deg2Rad), 0);
         velocity = direction * speed;
         transform.position += velocity * Time.deltaTime;
