@@ -13,10 +13,14 @@ public class Movement : MonoBehaviour
     float bearing = 0;
     float speed = 0f;
 
+    [SerializeField] Bullet bullet;
+    [SerializeField] AudioSource audioData;
+
     void Start()
     {
         maxSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         minSize = Camera.main.ScreenToWorldPoint(Vector2.zero);
+        audioData.Play();
     }
 
     // Update is called once per frame
@@ -48,6 +52,14 @@ public class Movement : MonoBehaviour
         if (transform.position.y < minSize.y)
         {
             transform.position = new Vector3(transform.position.x, maxSize.y, 0);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Bullet newBullet = Instantiate(bullet,transform.position,Quaternion.identity);
+            newBullet.bearing = bearing;
+            audioData.Play();
+            Debug.Log("shot");
         }
 
     }

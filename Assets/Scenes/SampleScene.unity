@@ -168,8 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba30b8f6bb116184bb003ce016cff5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  bearing: 0
+  bullet: {fileID: 5160976354142785319, guid: 59817eda3b8a9a0419cc34b5b67a1661, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +355,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2079401992, guid: 6b66aedb1b7714540a165f7b931c4bfb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
